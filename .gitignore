@@ -1,0 +1,22 @@
+# Environment - IMPORTANT
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Data - heavy files
+data/
+*.csv
+*.pkl
+
+# VS Code
+.vscode/
+
+# Virtual env
+venv/
+.venv/
