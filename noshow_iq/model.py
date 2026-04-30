@@ -1,3 +1,5 @@
+
+from datetime import datetime
 import joblib
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
@@ -41,7 +43,32 @@ def train(filepath='data/KaggleV2-May-2016 (1).csv'):
     # Save model
     joblib.dump(model, MODEL_PATH)
     print(f"Model saved to {MODEL_PATH}")
-
+# Save training run to MongoDB
+    try:
+        from pymongo import MongoClient
+        import os
+        from dotenv import load_dotenv
+        load_dotenv()
+        mongo_client = MongoClient(
+            os.environ.get('MONGO_URI', 'mongodb://localhost:27017/noshow_iq')
+        )
+        mongo_db = mongo_client['noshow_iq']
+        mongo_db.training_runs.insert_one({
+            'timestamp': datetime.utcnow(),
+            'training_size': len(X_train),
+            'imbalance_technique': 'SMOTE',
+            'metrics': {
+                'precision_0': round(report['0']['precision'], 4),
+                'recall_0': round(report['0']['recall'], 4),
+                'f1_0': round(report['0']['f1-score'], 4),
+                'precision_1': round(report['1']['precision'], 4),
+                'recall_1': round(report['1']['recall'], 4),
+                'f1_1': round(report['1']['f1-score'], 4),
+            }
+        })
+        print("Training run saved to MongoDB!")
+    except Exception as e:
+        print(f"MongoDB save failed: {e}")
     return model, report
 
 
