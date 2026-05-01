@@ -1,7 +1,6 @@
 
 from datetime import datetime
 import joblib
-import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
@@ -99,3 +98,4 @@ def evaluate(model, X_test, y_test):
 
 if __name__ == '__main__':
     train()
+    

@@ -1,6 +1,6 @@
 import pytest
 from noshow_iq.api import app
-from noshow_iq.preprocess import load_data, clean_data, get_features
+from noshow_iq.preprocess import load_data, clean_data
 from noshow_iq.model import predict
 
 
@@ -111,3 +111,4 @@ def test_predict_function():
     risk, prob = predict(features)
     assert risk in ['HIGH', 'LOW']
     assert 0.0 <= prob <= 1.0
+    
