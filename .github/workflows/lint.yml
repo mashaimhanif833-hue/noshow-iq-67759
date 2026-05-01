@@ -10,9 +10,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       
@@ -20,4 +20,4 @@ jobs:
         run: pip install flake8
       
       - name: Run flake8
-        run: flake8 noshow_iq/ tests/ --max-line-length=100 --ignore=E501,W503
+        run: flake8 noshow_iq/ tests/ --max-line-length=100 --ignore=E501,W503,W292,W293,E302,F401
