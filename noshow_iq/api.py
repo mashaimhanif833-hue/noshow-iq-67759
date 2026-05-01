@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
-from noshow_iq.model import predict, train
+from noshow_iq.model import predict
 
 load_dotenv()
 
@@ -149,4 +149,5 @@ def stats():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+   port = int(os.environ.get('PORT', 7860))
+app.run(host='0.0.0.0', port=port, debug=False)
