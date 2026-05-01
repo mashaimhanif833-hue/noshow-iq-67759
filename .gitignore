@@ -12,7 +12,6 @@ build/
 # Data - heavy files
 data/
 *.csv
-*.pkl
 
 # VS Code
 .vscode/
