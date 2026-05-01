@@ -19,3 +19,4 @@ data/
 # Virtual env
 venv/
 .venv/
+*.pkl
