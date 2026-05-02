@@ -41,3 +41,4 @@ https://mashaim-noshow-iq.hf.space
 
 ## GitHub
 https://github.com/mashaimhanif833-hue/noshow-iq-67759
+![CI/CD](https://github.com/mashaimhanif833-hue/noshow-iq-67759/actions/workflows/ci-cd.yml/badge.svg)
