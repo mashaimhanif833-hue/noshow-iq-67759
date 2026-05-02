@@ -9,7 +9,7 @@ from imblearn.over_sampling import SMOTE
 from noshow_iq.preprocess import load_data, clean_data, get_features
 
 import os
-MODEL_PATH = '/app/model.pkl'
+MODEL_PATH = 'model.pkl'
 
 
 def train(filepath='data/KaggleV2-May-2016 (1).csv'):
