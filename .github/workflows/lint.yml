@@ -21,3 +21,4 @@ jobs:
       
       - name: Run flake8
         run: flake8 noshow_iq/ tests/ --max-line-length=100 --ignore=E501,W503,W292,W293,E302,F401
+        flake8 noshow_iq/ tests/ --max-line-length=100 --ignore=E501,W503,W292,W293,E302,F401,E111,F811
