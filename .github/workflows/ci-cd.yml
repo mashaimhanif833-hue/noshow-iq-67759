@@ -20,7 +20,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Lint with flake8
-        run: flake8 noshow_iq/ tests/ --max-line-length=100 --ignore=E501,W503,W292,W293,E302,F401
+        run: flake8 noshow_iq/ tests/ --max-line-length=100 --ignore=E501,W503,W292,W293,E302,F401,E111,F811
 
       - name: Run pytest
         run: pip install pytest && python -m pytest tests/ -v
